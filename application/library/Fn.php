@@ -303,4 +303,3 @@ class Fn {
     
         return count($StringLast);
     }
-}

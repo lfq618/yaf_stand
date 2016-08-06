@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ---> Yii
 assets/*
 !assets/.gitignore
@@ -8,3 +9,15 @@ themes/classic/views/
 .buildpath
 .project
 
+=======
+# ---> Yii
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+.buildpath
+.project
+
+>>>>>>> 2ac61bc1fb5ba72b79c5f9748f9a49746096d72e
