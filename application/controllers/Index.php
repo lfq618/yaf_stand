@@ -24,7 +24,10 @@ class IndexController extends Yaf_Controller_Abstract
 	       echo "推荐";
 	   } else {
 	       echo "不推荐";
-	   }   
+	   } 
+	   
+	   
+	   
 	   
 	   
 	}
