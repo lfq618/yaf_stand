@@ -26,7 +26,7 @@ class IndexController extends Yaf_Controller_Abstract
 	       echo "不推荐";
 	   } 
 	   
-	   
+	   echo "你更新了";
 	   
 	   
 	   
