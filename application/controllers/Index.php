@@ -31,4 +31,8 @@ class IndexController extends Yaf_Controller_Abstract
 	   
 	   
 	}
+	
+	public function taskAction() {
+	    echo "this is a task!";
+	}
 }
