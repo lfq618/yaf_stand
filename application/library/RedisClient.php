@@ -8,24 +8,39 @@
 class RedisClient{
 
     /*单例容器*/
-    private static $_instance;
+    private static $_redisPool  = array();
 
     /**
      * (单例模式)
      * @return object
      */
-    public static function instance(){
-        global $cnf;
-        if(!(self::$_instance instanceof self)){
-            try{
-                self::$_instance = new redis();
-                self::$_instance->connect('127.0.0.1', 6379);
-            }catch(RedisException $e){
+    public static function instance( $redisString ) {
+        
+        $redisConfig = Yaf_Registry::get('config')->get('redis.'.$redisString);
+        if (! $redisConfig) {
+            Fn::writeLog("没有redis：{$redisString}实例配置"); 
+            throw new RedisException("没有redis：{$redisString}实例配置");
+        }
+        
+        if(! isset(self::$_redisPool[$redisString])) {
+            try {                
+                $redisObj = new Redis();
+                $redisObj->connect($redisConfig['host'], $redisConfig['port']);
+                
+                self::$_redisPool[$redisString] = $redisObj;
+                return $redisObj;
+                
+            } catch (RedisException $e) {                
                 Fn::writeLog($e->getMessage()); 
             }
+        } else {
+            return self::$_redisPool[$redisString];
         }
-        return self::$_instance;
+        
     }
+    
+    
+    
     /**
      * 防止new
      */
@@ -35,3 +50,4 @@ class RedisClient{
      */
     private function __construct() {}  
 } 
+
