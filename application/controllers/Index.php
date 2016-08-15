@@ -6,29 +6,8 @@ class IndexController extends Yaf_Controller_Abstract
     const CONTROL_RECOMMEND = 1;   //是否推荐标识位
     
 	public function indexAction() {
-	   $num = intval($this->getRequest()->getQuery('num'));
-	   
-	   if ($num & self::CONTROL_COOK) {
-	       echo "需要烹饪";
-	   } else {
-	       echo "不需要烹饪";
-	   }
-	   echo "<br />";
-	   if ($num & self::CONTROL_GARNISH) {
-	       echo "需要配菜";
-	   } else {
-	       echo "不需要配菜";
-	   }
-	   echo "<br />";
-	   if ($num & self::CONTROL_RECOMMEND) {
-	       echo "推荐";
-	   } else {
-	       echo "不推荐";
-	   } 
-	   
-	   echo "你更新了";
-	   
-	   
+	  
+        echo phpinfo();	   
 	   
 	}
 	
