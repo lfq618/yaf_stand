@@ -34,5 +34,13 @@ class IndexController extends Yaf_Controller_Abstract
 	
 	public function taskAction() {
 	    echo "this is a task!";
+	    
+	    $taskAry = array(
+	        'id'   => 1,
+	        'name' => 'fuqiang',
+	    );
+	    
+	    $ret = Task::addTask("Test", json_encode($taskAry));
+	    var_dump($ret);
 	}
 }
