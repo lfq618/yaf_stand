@@ -1,3 +1,11 @@
 #!/usr/bin/env /usr/bin/php
 <?php
-file_put_contents("/da0/logs/yafstd_cli.log", "aaaa\n", FILE_APPEND);
+define('DS', '/');
+define('APP_NAME', 'application');
+define('APPLICATION_PATH', '/home/wwwroot/yafstd');
+
+$loader = Yaf_Loader::getInstance(APPLICATION_PATH . DS . APP_NAME . DS . 'library');
+
+spl_autoload_register(array($loader, 'autoload'));
+
+echo Fn::getUuid();
