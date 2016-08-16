@@ -4,8 +4,8 @@ define('DS', '/');
 define('APP_NAME', 'application');
 define('APPLICATION_PATH', '/home/wwwroot/yafstd');
 
-$loader = Yaf_Loader::getInstance(APPLICATION_PATH . DS . APP_NAME . DS . 'library');
+//$loader = Yaf_Loader::getInstance(APPLICATION_PATH . DS . APP_NAME . DS . 'library');
 
-spl_autoload_register(array($loader, 'autoload'));
+//spl_autoload_register(array($loader, 'autoload'));
 
 echo Fn::getUuid();
