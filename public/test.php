@@ -1,7 +1,7 @@
 <?php
 while (1) {
-    $bWaitFlag = false;  //是否等待进程结束
-    $intNum    = 3;      //进程总数
+    $bWaitFlag = true;  //是否等待进程结束
+    $intNum    = 3;     //进程总数
     $pids = array();  //进程pid数组
     
     for ($i = 0; $i < $intNum; $i++) {
