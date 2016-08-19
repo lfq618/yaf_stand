@@ -53,4 +53,19 @@ class Task {
         }
     }
     
+    /**
+     * 获取任务队列的相关信息
+     * @param string $store
+     * @param string $storeString
+     */
+    public static function getTaskKeys($store = 'RedisStore', $storeString = 'main') {
+        $className = 'Task_' . ucfirst($store);
+        if (! class_exists($className)) {
+            return false;
+        }
+        
+        $storeObj = new $className($storeString, 1);
+        return $storeObj->getTaskKeys();
+    }
+    
 }
