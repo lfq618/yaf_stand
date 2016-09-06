@@ -22,4 +22,11 @@ class IndexController extends Yaf_Controller_Abstract
 	    $ret = Task::addTask("Test", json_encode($taskAry));
 	    var_dump($ret);
 	}
+	
+	public function mongoAction() {
+	    $conn = new Mongo('mongodb:/127.0.0.1:27017');
+	    
+	    print_r($conn->listDBs());
+	    
+	}
 }
