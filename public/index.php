@@ -2,9 +2,6 @@
 define('APPLICATION_PATH', realpath(dirname(__FILE__).'/../'));
 defined('YAF_ENVIRON') || define('YAF_ENVIRON', 'develop');
 
-var_dump($_SERVER);
-exit;
-
 if (! extension_loaded("yaf"))
 {
 	include APPLICATION_PATH . '/framework/loader.php';
