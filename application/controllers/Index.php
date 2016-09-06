@@ -24,7 +24,7 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
-	    $conn = new Mongo('mongodb:/127.0.0.1:27017');
+	    $conn = new Mongodb('mongodb:/127.0.0.1:27017');
 	    
 	    print_r($conn->listDBs());
 	    
