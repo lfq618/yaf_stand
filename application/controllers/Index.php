@@ -24,14 +24,9 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
+	    $manager = new MongoDB\Driver\Manager('mongodb:/localhost:27017');
 	    
-	    $conn = new MongoClient('mongodb:/127.0.0.1:27017');
-	    var_dump($conn);
-	    exit;
-	    
-	    $conn = new Mongo('mongodb:/127.0.0.1:27017');
-	    
-	    print_r($conn->listDBs());
+	    var_dump($manager);
 	    
 	}
 }
