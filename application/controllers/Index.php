@@ -27,8 +27,12 @@ class IndexController extends Yaf_Controller_Abstract
 	    $client = new MongoDB\Client('mongodb://localhost:27017');
 // 	    var_dump($client);
     
-	    $dbs = $client->listDatabases();
-	    var_dump($dbs);
+// 	    $dbs = $client->listDatabases();
+// 	    var_dump($dbs);
+    
+	    $foodtoonDb = $client->foodtoon;
+	    $results = $foodtoonDb->command('show tables');
+	    var_dump($results);
 	    
 	}
 	
