@@ -32,4 +32,17 @@ class IndexController extends Yaf_Controller_Abstract
 	    var_dump($conn);
 	    
 	}
+	
+	public function mongo2Action() {
+	    $className = 'MongoClient';
+	    $class2Name = 'Mongo';
+	    
+	    if (! class_exists($className)) {
+	        echo "MongoClient 不存在";
+	    }
+	    
+	    if (! class_exists($class2Name)) {
+	        echo 'Mongo不存在';
+	    }
+	}
 }
