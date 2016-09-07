@@ -31,7 +31,15 @@ class IndexController extends Yaf_Controller_Abstract
 // 	    var_dump($dbs);
     
 	    $foodtoonDb = $client->foodtoon;
-	    $results = $foodtoonDb->command('show tables');
+	    
+	    $cmd = [
+	        'geoNear' => 'geotest',
+	        'near' => [116.403958, 39.915049],
+	        'distanceMultiplier' => 6378137, 
+	        'num'  => 10,
+	        'spherical' => true,
+	    ];
+	    $results = $foodtoonDb->command($cmd);
 	    var_dump($results);
 	    
 	}
