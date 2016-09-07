@@ -129,9 +129,9 @@ class IndexController extends Yaf_Controller_Abstract
 	        $data = [
 	            '_id'      => $id,
 	            'title'    => $title,
-	            'loc'      => [
-	               'lat'  => $lat,
-	               'long' => $long
+	            'coordinate'      => [
+	               'long'  => $long,
+	               'lat' => $lat
 	            ]
 	        ];
 	        
@@ -139,6 +139,7 @@ class IndexController extends Yaf_Controller_Abstract
 	        $bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);
 	        
 	        $bulk->insert($data);
+	        
 	        
 	        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
 	        try {
