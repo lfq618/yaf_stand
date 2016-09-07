@@ -108,7 +108,8 @@ class IndexController extends Yaf_Controller_Abstract
 	        exit;
 	    }
 	    
-	    
+	    printf("Insert %d documents\n", $result->getInsertedCount());
+	    printf("Update %d documents\n", $result->getModifiedCount());
 	    
 	    
 	    
