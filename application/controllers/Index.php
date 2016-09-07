@@ -26,6 +26,8 @@ class IndexController extends Yaf_Controller_Abstract
 	public function clientAction() {
 	    $client = new MongoDB\Client('mongodb://localhost:27017');
 	    var_dump($client);
+	    
+	    
 	}
 	
 	public function mongoAction() {
