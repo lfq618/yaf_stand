@@ -24,7 +24,7 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
-	    $manager = new MongoDB\Driver\Manager('mongodb:/127.0.0.1:27017');
+	    $manager = new MongoDB\Driver\Manager('mongodb://127.0.0.1:27017');
 	    
 	    var_dump($manager);
 	    
