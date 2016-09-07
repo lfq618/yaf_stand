@@ -67,6 +67,52 @@ class IndexController extends Yaf_Controller_Abstract
 	    }
 	    
 	    
+	    //BulkWrite
+	    echo "<hr />";
+	    $bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);
+	    $bulk->delete([]);
+	    $bulk->insert(['_id' => 1]);
+	    $bulk->insert(['_id' => 2]);
+	    $bulk->insert(['_id' => 3, 'hello' => 'world']);
+	    $bulk->update(['_id' => 3], ['$set' => ['hello' => 'earth']]);
+	    $bulk->insert(['_id' => 4, 'hello' => 'pluto']);
+	    $bulk->update(['_id' => 4], ['$set' => ['hello' => 'moon']]);
+	    $bulk->insert(['_id' => 3]);
+	    $bulk->insert(['_id' => 4]);
+	    $bulk->insert(['_id' => 5]);
+	    
+	    $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
+	    try {
+	        $result = $manager->executeBulkWrite('foodtoon.test', $bulk, $writeConcern);
+	    } catch (MongoDB\Driver\Exception\BulkWriteException $e) {
+	        $result = $e->getWriteResult();
+	        
+	        //Check if the write concern could not be fulfilled
+	        if ($writeConcernError = $result->getWriteConcernError()) {
+	            printf("%s (%d): %s\n", 
+	               $writeConcernError->getMessage(),
+	               $writeConcernError->getCode(),
+	               var_export($writeConcernError->getInfo(), true)
+	            );
+	        }
+	        
+	        foreach ($result->getWriteErrors() as $writeErr) {
+	            printf("Operation#%d: %s (%d)\n",
+	               $writeErr->getIndex(),
+	               $writeErr->getMessage(),
+	               $writeErr->getCode()
+	            );
+	        }
+	    } catch (MongoDB\Driver\Exception\Exception $e) {
+	        printf("Other error: %s\n", $e->getMessage());
+	        exit;
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 	    
