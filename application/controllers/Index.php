@@ -23,6 +23,11 @@ class IndexController extends Yaf_Controller_Abstract
 	    var_dump($ret);
 	}
 	
+	public function clientAction() {
+	    $client = new MongoDB\Client('mongodb://localhost:27017');
+	    var_dump($client);
+	}
+	
 	public function mongoAction() {
 	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon');
 	    $command = new MongoDB\Driver\Command(['ping' => 1]);
