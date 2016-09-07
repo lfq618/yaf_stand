@@ -47,15 +47,24 @@ class IndexController extends Yaf_Controller_Abstract
 // 	    $ret = $manager->executeBulkWrite('foodtoon.user', $bulk);
 // 	    var_dump($ret);
 
-	    $query = new MongoDB\Driver\Command([
-	        'query' => ['name' => 'liboran']
-	    ]);
+// 	    $query = new MongoDB\Driver\Command([
+// 	        'query' => ['name' => 'liboran']
+// 	    ]);
 	    
-	    $cursor = $manager->executeCommand('foodtoon.user', $query);
-	    var_dump($cursor);
-	    $scents = current($cursor->toArray())->values;
+// 	    $cursor = $manager->executeCommand('foodtoon.user', $query);
+// 	    var_dump($cursor);
+// 	    $scents = current($cursor->toArray())->values;
 	    
-	    var_dump($scents);
+// 	    var_dump($scents);
+
+	    $filter = ['_id' => 2];
+	    $options = [];
+	    
+	    $query = new MongoDB\Driver\Query($filter, $options);
+	    $rows = $manager->executeQuery('foodtoon.user', $query);
+	    print_r($rows);
+	    
+	    
 	    
 	    
 	    
