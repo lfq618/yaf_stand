@@ -40,7 +40,13 @@ class IndexController extends Yaf_Controller_Abstract
 	        'spherical' => true,
 	    ];
 	    $results = $foodtoonDb->command($cmd);
-	    var_dump($results);
+	    if ($results) {
+	        $results = $results->toArray();
+	        foreach ($results as $res) {
+	            var_dump($res);
+	            echo "<hr />";
+	        }
+	    }
 	    
 	}
 	
