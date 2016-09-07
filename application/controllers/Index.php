@@ -28,7 +28,7 @@ class IndexController extends Yaf_Controller_Abstract
 // 	    var_dump($client);
     
 	    $dbs = $client->listDatabases();
-	    
+	    var_dump($dbs);
 	    
 	}
 	
