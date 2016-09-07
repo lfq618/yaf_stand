@@ -24,7 +24,7 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
-	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon1');
+	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon');
 	    $command = new MongoDB\Driver\Command(['ping' => 1]);
 	    
 	    try {
@@ -44,7 +44,7 @@ class IndexController extends Yaf_Controller_Abstract
 	    $bulk->insert(['_id' => 3, 'name' => 'liboran', 'age' => 2]);
 	    $bulk->insert(['_id' => 4, 'name' => 'chenlong', 'age' => 30]);
 	    
-	    $ret = $manager->executeBulkWrite('db.foodtoon', $bulk);
+	    $ret = $manager->executeBulkWrite('foodtoon.user', $bulk);
 	    var_dump($ret);
 	    
 	    
