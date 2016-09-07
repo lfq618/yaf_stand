@@ -33,13 +33,19 @@ class IndexController extends Yaf_Controller_Abstract
 	        echo $e->getMessage();
 	        exit;
 	    }
-	    var_dump($cursor);
-	    echo "<br/>";
+	    
 	    $response = $cursor->toArray()[0];
 	    
 	    var_dump($response);
 	    
 	    echo "<hr />";
+	    
+	    $bulk = new MongoDB\Driver\BulkWrite;
+	    $bulk->insert(['_id' => 3, 'name' => 'liboran', 'age' => 2]);
+	    $bulk->insert(['_id' => 4, 'name' => 'chenlong', 'age' => 30]);
+	    
+	    $manager->executeBulkWrite('db.foodtoon', $bulk);
+	    
 	    
 	    
 	    
