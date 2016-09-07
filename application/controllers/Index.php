@@ -40,12 +40,21 @@ class IndexController extends Yaf_Controller_Abstract
 	    
 	    echo "<hr />";
 	    
-	    $bulk = new MongoDB\Driver\BulkWrite;
-	    $bulk->insert(['_id' => 3, 'name' => 'liboran', 'age' => 2]);
-	    $bulk->insert(['_id' => 4, 'name' => 'chenlong', 'age' => 30]);
+// 	    $bulk = new MongoDB\Driver\BulkWrite;
+// 	    $bulk->insert(['_id' => 3, 'name' => 'liboran', 'age' => 2]);
+// 	    $bulk->insert(['_id' => 4, 'name' => 'chenlong', 'age' => 30]);
 	    
-	    $ret = $manager->executeBulkWrite('foodtoon.user', $bulk);
-	    var_dump($ret);
+// 	    $ret = $manager->executeBulkWrite('foodtoon.user', $bulk);
+// 	    var_dump($ret);
+
+	    $query = new MongoDB\Driver\Command([
+	        'query' => ['name' => 'liboran']
+	    ]);
+	    
+	    $cursor = $manager->executeCommand('foodtoon.user', $query);
+	    $scents = current($cursor->toArray())->values;
+	    
+	    var_dump($scents);
 	    
 	    
 	    
