@@ -24,14 +24,20 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
-	    $manager = new MongoDB\Driver\Manager('mongodb://127.0.0.1:27017');
+	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+	    $command = new MongoDB\Driver\Command(['ping' => 1]);
 	    
-	    var_dump($manager);
-	    echo "<hr />";
+	    try {
+	        $cursor = $manager->executeCommand('foodtoon', $command);
+	    } catch (MongoDB\Driver\Exception $e) {
+	        echo $e->getMessage();
+	        exit;
+	    }
 	    
-	    $collection = (new MongoDB\Client)->demo-zips;
-	    $document = $collection->findOne(["_id" => 123]);
-	    var_dump($document);
+	    $response = $cursor->toArray()[0];
+	    
+	    var_dump($response);
+	    
 	    
 	}
 	
