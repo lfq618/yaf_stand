@@ -62,7 +62,9 @@ class IndexController extends Yaf_Controller_Abstract
 	    
 	    $query = new MongoDB\Driver\Query($filter, $options);
 	    $rows = $manager->executeQuery('foodtoon.user', $query);
-	    print_r($rows);
+	    foreach ($rows as $r) {
+	        print_r($r);
+	    }
 	    
 	    
 	    
