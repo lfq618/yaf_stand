@@ -41,7 +41,7 @@ class IndexController extends Yaf_Controller_Abstract
 	    ];
 	    $results = $foodtoonDb->command($cmd);
 	    if ($results) {
-	        $results = $results->toArray();
+	        $results = $results->toArray()[0];
 	        foreach ($results as $res) {
 	            var_dump($res);
 	            echo "<hr />";
