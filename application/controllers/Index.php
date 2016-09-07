@@ -109,26 +109,74 @@ class IndexController extends Yaf_Controller_Abstract
 	    }
 	    
 	    printf("Insert %d documents\n", $result->getInsertedCount());
-	    printf("Update %d documents\n", $result->getModifiedCount());
-	    
-	    
-	    
-	    
-	    
-	    
+	    printf("Update %d documents\n", $result->getModifiedCount());	    
 	    
 	}
 	
-	public function mongo2Action() {
-	    $className = 'MongoClient';
-	    $class2Name = 'Mongo';
-	    
-	    if (! class_exists($className)) {
-	        echo "MongoClient 不存在";
+		
+	public function geoAction() {
+	    Yaf_Application::app()->getDispatcher()->enableView();
+	    if ($this->getRequest()->isPost()) {
+	        $id    = intval($this->getRequest()->getPost('id'));
+	        $title = trim($this->getRequest()->getPost('title'));
+	        $lat   = floatval($this->getRequest()->getPost('lat'));
+	        $long  = floatval($this->getRequest()->getPost('long'));
+	         
+	        if (! $title || ! $lat || ! $long) {
+	            exit('参数错误');
+	        }
+	        
+	        $data = [
+	            '_id'      => $id,
+	            'title'    => $title,
+	            'loc'      => [
+	               'lat'  => $lat,
+	               'long' => $long
+	            ]
+	        ];
+	        
+	        $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon');
+	        $bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);
+	        
+	        $bulk->insert($data);
+	        
+	        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
+	        try {
+	            $result = $manager->executeBulkWrite('foodtoon.geotest', $bulk, $writeConcern);
+	        } catch (MongoDB\Driver\Exception\BulkWriteException $e) {
+	            $result = $e->getWriteResult();
+	             
+	            //Check if the write concern could not be fulfilled
+	            if ($writeConcernError = $result->getWriteConcernError()) {
+	                printf("%s (%d): %s\n",
+	                $writeConcernError->getMessage(),
+	                $writeConcernError->getCode(),
+	                var_export($writeConcernError->getInfo(), true)
+	                );
+	            }
+	             
+	            foreach ($result->getWriteErrors() as $writeErr) {
+	                printf("Operation#%d: %s (%d)\n",
+	                $writeErr->getIndex(),
+	                $writeErr->getMessage(),
+	                $writeErr->getCode()
+	                );
+	            }
+	        } catch (MongoDB\Driver\Exception\Exception $e) {
+	            printf("Other error: %s\n", $e->getMessage());
+	            exit;
+	        }
+	         
+	        printf("Insert %d documents\n", $result->getInsertedCount());
+	        printf("Update %d documents\n", $result->getModifiedCount());
+	        exit;
+	        
 	    }
 	    
-	    if (! class_exists($class2Name)) {
-	        echo 'Mongo不存在';
-	    }
+	    
+	    return true;
+	    
+	    
+	    
 	}
 }
