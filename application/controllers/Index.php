@@ -33,10 +33,14 @@ class IndexController extends Yaf_Controller_Abstract
 	        echo $e->getMessage();
 	        exit;
 	    }
-	    
+	    var_dump($cursor);
+	    echo "<br/>";
 	    $response = $cursor->toArray()[0];
 	    
 	    var_dump($response);
+	    
+	    echo "<hr />";
+	    
 	    
 	    
 	}
