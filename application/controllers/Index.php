@@ -24,7 +24,7 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function mongoAction() {
-	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon');
+	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017/foodtoon1');
 	    $command = new MongoDB\Driver\Command(['ping' => 1]);
 	    
 	    try {
