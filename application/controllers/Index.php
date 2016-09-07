@@ -28,5 +28,8 @@ class IndexController extends Yaf_Controller_Abstract
 	    
 	    var_dump($manager);
 	    
+	    $conn = new MongoClient('mongodb://127.0.0.1:27017');
+	    var_dump($conn);
+	    
 	}
 }
