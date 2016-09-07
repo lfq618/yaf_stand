@@ -23,6 +23,9 @@ class IndexController extends Yaf_Controller_Abstract
 	    var_dump($ret);
 	}
 	
+	/**
+	 * 通过添加的library库
+	 */
 	public function clientAction() {
 	    $client = new MongoDB\Client('mongodb://localhost:27017');
 // 	    var_dump($client);
@@ -48,6 +51,27 @@ class IndexController extends Yaf_Controller_Abstract
 	        }
 	    }
 	    
+	}
+	
+	public function moextensionAction() {
+	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+	    
+	    $cmd = [
+	        'geoNear' => 'geotest',
+	        'near' => [116.403958, 39.915049],
+	        'distanceMultiplier' => 6378137,
+	        'num'  => 10,
+	        'spherical' => true,
+	    ];
+	    $command = new MongoDB\Driver\Command($cmd);
+	    
+	    try {
+	       $cursor = $manager->executeCommand('foodtoon', $command); 
+	    } catch (MongoDB\Driver\Exception $e) {
+	        echo $e->getMessage();
+	        exit;
+	    }
+	    print_r($cursor);
 	}
 	
 	public function mongoAction() {
