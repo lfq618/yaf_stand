@@ -52,6 +52,7 @@ class IndexController extends Yaf_Controller_Abstract
 	    ]);
 	    
 	    $cursor = $manager->executeCommand('foodtoon.user', $query);
+	    var_dump($cursor);
 	    $scents = current($cursor->toArray())->values;
 	    
 	    var_dump($scents);
