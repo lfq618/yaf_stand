@@ -14,10 +14,10 @@ while (1) {
             exit(0);  //子进程要exit，否则会进行递归多进程，父进程不要exit，否则终止多进程.
         }
         
-        if ($bWaitFlag) {
-            pcntl_waitpid($pids[$i], $status, WUNTRACED);
-            echo "wait {$i} -> " . time() . "\n";
-        }
+//         if ($bWaitFlag) {
+//             pcntl_waitpid($pids[$i], $status, WUNTRACED);
+//             echo "wait {$i} -> " . time() . "\n";
+//         }
         
     }
     sleep(1);
