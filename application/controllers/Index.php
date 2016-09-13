@@ -62,7 +62,7 @@ class IndexController extends Yaf_Controller_Abstract
 	        'distanceMultiplier' => 6378137,
 	        'num'  => 10,
 	        'spherical' => true,
-	        'skip' => 2,
+	        'skip' => 4,
 	    ];
 	    $command = new MongoDB\Driver\Command($cmd);
 	    
