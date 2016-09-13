@@ -235,7 +235,7 @@ class IndexController extends Yaf_Controller_Abstract
 	
 	public function sortAction() {
 	    $arr['one'] = 3;
-	    $arr['two'] = 4;
+	    $arr['two'] = 2;
 	    $arr['three'] = 8;
 	    
 	    arsort($arr);
