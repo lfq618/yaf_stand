@@ -64,10 +64,11 @@ class IndexController extends Yaf_Controller_Abstract
 	        'spherical' => true,
 	        'skip' => 4,
 	    ];
-	    $command = new MongoDB\Driver\Command($cmd);
-	    
+// 	    $command = new MongoDB\Driver\Command($cmd);
+	    $query = new MongoDB\Driver\Query($cmd);
 	    try {
-	       $cursor = $manager->executeCommand('foodtoon', $command); 
+// 	       $cursor = $manager->executeCommand('foodtoon', $command); 
+	       $cursor = $manager->executeQuery('foodtoon.geotest', $query);
 	    } catch (MongoDB\Driver\Exception $e) {
 	        echo $e->getMessage();
 	        exit;
