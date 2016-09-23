@@ -243,9 +243,17 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function domainAction() {
-	    $domain = 'http://api.router.systoon.com/open/url';
-	    $ary = parse_url($domain, PHP_URL_HOST);
-	    var_dump($ary);
+	    $url = 'http://api.router.systoon.com/open/url';
+	    $domain = parse_url($url, PHP_URL_HOST);
+// 	    var_dump($ary);
+	    echo "<hr />";
+	    $aa = 'a';
+	    $aaAry = explode('|', $aa);
+	    var_dump($aaAry);
+	    echo "<hr />";
+	    $aa = 'a|b|c';
+	    $aaAry = explode('|', $aa);
+	    var_dump($aaAry);
 	        
 	}
 }
