@@ -256,4 +256,10 @@ class IndexController extends Yaf_Controller_Abstract
 	    var_dump($aaAry);
 	        
 	}
+	
+	public function logAction() {
+	    $dir = '/da0/logs/aa/bb/cc.log';
+	    $ret = file_put_contents($dir, "aaa", FILE_APPEND);
+	    var_dump($ret);
+	}
 }
