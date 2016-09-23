@@ -259,6 +259,9 @@ class IndexController extends Yaf_Controller_Abstract
 	
 	public function logAction() {
 	    $dir = '/da0/logs/aa/bb/cc.log';
+	    if (! is_dir('/da0/logs/aa/bb')) {
+	        mkdir($dir, 0755, true);
+	    }
 	    $ret = file_put_contents($dir, "aaa", FILE_APPEND);
 	    var_dump($ret);
 	}
