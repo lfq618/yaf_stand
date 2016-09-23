@@ -241,4 +241,11 @@ class IndexController extends Yaf_Controller_Abstract
 	    arsort($arr);
 	    print_r($arr);
 	}
+	
+	public function domainAction() {
+	    $domain = 'http://api.router.systoon.com/open/url';
+	    $ary = parse_url($domain);
+	    var_dump($ary);
+	        
+	}
 }
