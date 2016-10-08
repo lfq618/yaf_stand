@@ -52,6 +52,7 @@ class TestController extends Yaf_Controller_Abstract {
                     $handle = fopen($file, 'r');
                     while (! feof($handle)) {
                         $line = fgets($handle);
+                        echo $line;
                         $line = str_replace('CRIT:', '', $line);
                         list($name, $code) = explode("\t", $line);
                         echo $name;
