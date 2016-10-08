@@ -64,7 +64,7 @@ class TestController extends Yaf_Controller_Abstract {
                 $tm += 86400;
             }
         }
-    
+        echo count($objectAry);
         foreach ($objectAry as $uid => $name) {
             Fn::writeLog("{$uid}\t{$name}", "/logs/noPoiType.log");
         }
