@@ -32,7 +32,7 @@ class Fn {
             $fileName =  '/logs/error.log';
         } 
         
-        $fileName = APP_PATH . $fileName;
+//         $fileName = APP_PATH . $fileName;
         
         file_put_contents( $fileName, $str . "\n", FILE_APPEND );        
     }
