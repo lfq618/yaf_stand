@@ -53,16 +53,11 @@ class TestController extends Yaf_Controller_Abstract {
                     $handle = fopen($file, 'r');
                     while (! feof($handle)) {
                         $line = fgets($handle);
-                        echo $line;
                         $line = str_replace('CRIT:', '', $line);
                         list($name, $code) = explode("\t", $line);
-                        echo $name;
-                        echo "<hr />";
-                        echo $code;
-                        exit;
-//                         if (! isset($objectAry[$lineData['uid']])) {
-//                             $objectAry[$lineData['uid']] = $lineData['name'];
-//                         }
+                        if (! isset($objectAry[$code])) {
+                            $objectAry[$code] = $name;
+                        }
                     }
                     fclose($handle);
                 }
