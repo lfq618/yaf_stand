@@ -31,7 +31,7 @@ class TestController extends Yaf_Controller_Abstract {
         }
         
         foreach ($objectAry as $uid => $name) {
-            Fn::writeLog("{$uid}\t{$name}", "/logs/noObject.log");
+            Fn::writeLog("{$uid}\t{$name}", "/da0/logs/noObject.log");
         }
         
         echo "ok";
@@ -66,7 +66,7 @@ class TestController extends Yaf_Controller_Abstract {
         }
         echo count($objectAry);
         foreach ($objectAry as $uid => $name) {
-            Fn::writeLog("{$uid}\t{$name}", "/logs/noPoiType.log");
+            Fn::writeLog("{$uid}\t{$name}", "/da0/logs/noPoiType.log");
         }
     
         echo "ok";
