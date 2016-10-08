@@ -11,6 +11,10 @@ class IndexController extends Yaf_Controller_Abstract
 	   
 	}
 	
+	public function aaaAction() {
+	    $this->getView()->assign("aaa", 'bbb');
+	}
+	
 	public function taskAction() {
 	    echo "this is a task!";
 	    
