@@ -47,8 +47,9 @@ class TestController extends Yaf_Controller_Abstract {
         foreach ($logAry as $logPath) {
             $tm = strtotime('2016-09-30');
             while ($tm < time()) {
-                echo $file = $logPath . '/noPoiType-' . date('Ymd') . '.log';
+                $file = $logPath . '/noPoiType-' . date('Ymd') . '.log';
                 if (is_file($file)) {
+                    echo $file . "<br />";
                     $handle = fopen($file, 'r');
                     while (! feof($handle)) {
                         $line = fgets($handle);
