@@ -7,7 +7,7 @@ class IndexController extends Yaf_Controller_Abstract
     
 	public function indexAction() {
 	  
-        echo phpinfo();	   
+        die('http://www.baidu.com?apid=1&h=c'); 
 	   
 	}
 	
