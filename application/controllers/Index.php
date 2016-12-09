@@ -60,7 +60,7 @@ class IndexController extends Yaf_Controller_Abstract
 	public function moextensionAction() {
 	    $options = [
 	        'username' => 'lifuqiang',
-	        'password' => 'lfq618', 
+	        'password' => 'lifq618', 
 	    ];
 	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017', $options);
 	    
