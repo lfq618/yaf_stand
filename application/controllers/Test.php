@@ -71,4 +71,9 @@ class TestController extends Yaf_Controller_Abstract {
     
         echo "ok";
     }
+    
+    public function phpinfoAction() {
+        echo phpinfo();
+        exit;
+    }
 }
