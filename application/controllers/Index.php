@@ -58,7 +58,11 @@ class IndexController extends Yaf_Controller_Abstract
 	}
 	
 	public function moextensionAction() {
-	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+	    $options = [
+	        'username' => 'lifuqiang',
+	        'password' => 'lfq618', 
+	    ];
+	    $manager = new MongoDB\Driver\Manager('mongodb://localhost:27017', $options);
 	    
 	    $cmd = [
 	        'geoNear' => 'geotest',
