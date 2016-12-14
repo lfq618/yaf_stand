@@ -274,4 +274,12 @@ class IndexController extends Yaf_Controller_Abstract
 	    $ret = file_put_contents($dir, "aaa", FILE_APPEND);
 	    var_dump($ret);
 	}
+	
+	public function urlAction() {
+	    $url = 'http://p100.portal.toon.mobi/html/src/indexBeijingToon.html#!/forum?id=8&name=减肥健康&poiId=120300-3857';
+	    $url = base64_encode(urlencode($url));
+	    echo $url;
+	    exit;
+	        
+	}
 }
