@@ -1,6 +1,16 @@
 <?php
 class TestController extends Yaf_Controller_Abstract {
     
+    public function mogoAction() {
+        $data = array(
+            'connect' => true,
+            'replicaSet' => 'scm9ec0177a',
+        );
+        
+        echo json_encode($data);
+        exit;
+    }
+    
     public function objectAction() {
         $objectAry = [];
         $logAry = [
