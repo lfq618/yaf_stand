@@ -91,6 +91,8 @@ class TestController extends Yaf_Controller_Abstract {
         echo $this->getRequest()->getMethod();
         var_dump($this->getRequest()->getPost());
         echo file_get_contents("php://input");
+        echo "<br />";
+        echo $GLOBALS['HTTP_RAW_POST_DATA'];
         exit;
     }
 }
