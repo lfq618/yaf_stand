@@ -90,6 +90,7 @@ class TestController extends Yaf_Controller_Abstract {
     public function requestAction() {
         echo $this->getRequest()->getMethod();
         var_dump($this->getRequest()->getPost());
+        echo file_get_contents("php://input");
         exit;
     }
 }
