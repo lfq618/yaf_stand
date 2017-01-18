@@ -95,4 +95,11 @@ class TestController extends Yaf_Controller_Abstract {
         echo $GLOBALS['HTTP_RAW_POST_DATA'];
         exit;
     }
+    
+    public function timeAction() {
+        echo microtime(true);
+        echo "<br />";
+        echo microtime(true) * 1000;
+        exit;
+    }
 }
