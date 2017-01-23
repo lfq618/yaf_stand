@@ -11,6 +11,11 @@ class TestController extends Yaf_Controller_Abstract {
         exit;
     }
     
+    public function agentAction() {
+        $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+        Fn::outputToJson(0, 'ok', $ua);
+    }
+    
     public function objectAction() {
         $objectAry = [];
         $logAry = [
