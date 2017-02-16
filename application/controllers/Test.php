@@ -1,6 +1,12 @@
 <?php
 class TestController extends Yaf_Controller_Abstract {
     
+    public function jsonAction() {
+        $data = 'aaaaa';
+        
+        Fn::outputToJson(0, 'ok', $data);
+    }
+    
     public function mogoAction() {
         if (5 & 2) {
             echo "&ok";

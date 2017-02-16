@@ -240,6 +240,7 @@ class Fn {
         return  round($s);
     }
     
+
     /**
      * 输出json数据
      * @param unknown $code
@@ -249,24 +250,30 @@ class Fn {
      */
     public static function outputToJson( $code, $message, $data = null, $noCache = true ) {
         header("Content-type: application/json; charset=utf-8");
-        
+    
         if ( $noCache ) {
             header("Cache-Control: no-cache");
         }
-        
+    
         $msg = array(
-            'code'      => $code,
-            'message'   => $message,
-            'data'      => $data,
+            'meta' => array(
+                'code' => $code,
+                'message'  => $message,
+                'timestamp' => self::getMillisecond(),
+            ),
+            'data' => $data
         );
-        
+    
+    
+    
         $msg = json_encode($msg);
-        
+    
         header('Content-Length:' . strlen($msg));
-        
+    
         echo $msg;
-        exit(0);        
+        exit(0);
     }
+    
     
     /**
      * 计算字符长度，包括中文
