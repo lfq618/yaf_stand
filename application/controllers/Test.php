@@ -17,7 +17,7 @@ class TestController extends Yaf_Controller_Abstract {
         echo "<br />";
         echo 5 & 2;
         echo "<br />";
-        echo 5 | 2;
+        echo 7 | 2;
         exit;
     }
     
