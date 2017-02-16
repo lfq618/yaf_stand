@@ -1,6 +1,22 @@
 <?php
 class TestController extends Yaf_Controller_Abstract {
     
+    public function bbbAction() {
+        $poiInfo = [
+            'type'      => '120300',
+            'uid'       => 123,
+            'name'      => '望京小区',
+            'address'   => '北京望京',
+            'city_id'   => '100',
+            'city_name' => '北京',
+            'latitude'       => 39.999999,
+            'longitude'      => 116.000000,
+        ];
+        
+        echo json_encode($poiInfo);
+        exit;
+    }
+    
     public function jsonAction() {
         $data = 'aaaaa';
         
