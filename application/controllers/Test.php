@@ -2,12 +2,22 @@
 class TestController extends Yaf_Controller_Abstract {
     
     public function mogoAction() {
-        $data = array(
-            'connect' => true,
-            'replicaSet' => 'scm9ec0177a',
-        );
+        if (5 & 2) {
+            echo "&ok";
+        } else {
+            echo '&fa';
+        }
+        echo "<br />";
+        if (5 | 2) {
+            echo '|ok';
+        } else {
+            echo '|fa';
+        }
         
-        echo json_encode($data);
+        echo "<br />";
+        echo 5 & 2;
+        echo "<br />";
+        echo 5 | 2;
         exit;
     }
     
