@@ -1,6 +1,14 @@
 <?php
 class TestController extends Yaf_Controller_Abstract {
     
+    public function md5Action() {
+        $tm = date('YmdH');
+        $secret = 'weibbs2017';
+        $ua = '';
+        echo md5($secret . '' . $tm . $secret);
+        exit;
+    }
+    
     public function bbbAction() {
         $poiInfo = [
             'type'      => '120300',
