@@ -1,0 +1,361 @@
+#huati{
+  width:100%;
+  height:100%;
+   .goTop{
+       position: fixed;
+       bottom:pxTorem(20px);
+       right:pxTorem(20px);
+       width:pxTorem(40px);
+       height:pxTorem(40px);
+       background:#fff;
+       border-radius: 50%;
+       border-bottom: 1px solid #ccc;
+       z-index: 999;
+       font-size: pxTorem(32px);
+   }
+   .goTop:after{
+       content:"\e6aa";
+       width:pxTorem(40px);
+       text-align: center;
+       color:#ccc;
+       line-height:pxTorem(40px);
+   }
+   .h_top{
+       width:100%;
+       background:#fff;
+       height:auto;
+       border-bottom: 1px solid #ccc;
+       .person_pic{
+           float:left;
+           width:pxTorem(35px);
+           height:pxTorem(35px);
+           border-radius: 50%;
+           margin:pxTorem(15px) 0 0 pxTorem(10px);
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+       }
+       
+       .top_right{
+           margin-left:pxTorem(53px);
+           margin-right:pxTorem(15px);
+           height:auto;
+           overflow: auto;
+           overflow-x: hidden;
+           .comments-dt {
+               opacity: 0;
+           }
+           .person_mingzi{
+               height:pxTorem(40px);
+               padding-top:pxTorem(15px);
+               @include sizing();
+               .person_mingzi_span1{
+                   float:left;
+                    font-size: pxTorem(14px);
+                    color: #8E8E93;
+               }
+               .defaultColor{
+                     font-size: pxTorem(13px);
+                     color: #000;
+                     float:right;
+               }
+               .typeColorBlue{
+                 font-size: pxTorem(13px);
+                 color: #2ECBBE;
+                 float:right;
+               }
+               .typeColorPink{
+                 font-size: pxTorem(13px);
+                 color: #E97293;
+                 float:right;
+               }
+           }
+           .topic_tilte{
+               margin-bottom:pxTorem(8px);
+               font-size:pxTorem(17px);
+               color:#000;
+               line-height: pxTorem(22px);
+           }
+           .fabiao_text{
+                height:auto;
+                font-size: pxTorem(15px);
+                color: #333;
+                letter-spacing: 0px;
+                line-height: pxTorem(21px);
+                text-align: justify;
+           }
+           .fabiao_pic{
+               
+               width:100%;
+               height:auto;
+               display: block;
+               .h_pic1{
+                   width:pxTorem(96px);
+                   height:pxTorem(96px);
+                   display: inline-block;
+                   margin-right:0.16rem;
+                   margin-top:pxTorem(6px);
+                   span{
+                       display:block;
+                       width:100%;
+                       height:100%;
+                   }
+               }
+               .one_pic{
+                   width:pxTorem(225px);
+                   height:pxTorem(158px);
+                   display: inline-block;
+                   margin-top:pxTorem(6px);
+                   span{
+                       display:block;
+                       width:100%;
+                       height:100%;
+                   }
+               }
+               
+           }
+           
+           .fabiao_bottom{
+               position: relative;
+               display: block;
+               width:100%;
+               height:pxTorem(36.25px);
+               line-height:pxTorem(36.25px);
+               margin-top:pxTorem(4.875px);
+               margin-bottom:pxTorem(8.875px);
+               font-size: pxTorem(13px);
+               color: #ACB3BF;
+               .comments-bar {
+                   height:pxTorem(36.25px);
+                   .comments-praise {
+                       height: auto;
+                   }
+               }
+               .topic_time {
+                   z-index: 1000;
+                   display: block;
+                   position: absolute;
+                   left: 0;
+                   top: 0;
+                   height:pxTorem(36.25px);
+                   p {
+                       font-size: pxTorem(13px);
+                       color: #8e8e93;
+                       float: left;
+                       span {
+                           display: inline-block;
+                           margin-left: pxTorem(7px);
+                       }
+                   }
+                   .h_delete {
+                       color: #007aff;
+                       margin-left: pxTorem(14px);
+                   }
+               }
+           }
+       }
+   }
+   .linkActive:after{
+        content:"\e6be" !important;
+        font-size:pxTorem(15px);
+        width:pxTorem(24px);
+        right: 0;
+        text-align: center;
+        color:#ff5a5f !important;
+   }
+   .pinglun_message{
+       display: block;
+       
+       position: relative;
+       background:#fff;
+       height:auto;
+       margin-top:pxTorem(10px);
+       li{
+           display: block;
+           width:100%;
+           position: relative;
+           height:auto;
+           border-bottom:1px solid #ccc;
+           .message_pic{
+               position: absolute;
+               width:pxTorem(24px);
+               height:pxTorem(24px);
+               left:pxTorem(5px);
+               top:pxTorem(15px);
+               overflow: hidden;
+               border-radius: 50%;
+               span{
+                   display: block;
+                   width:pxTorem(24px);
+                    height:pxTorem(24px);
+                   img {
+                       width: 100%;
+                       height:100%;
+                       -webkit-border-radius: 50%;
+                       -moz-border-radius: 50%;
+                       border-radius: 50%;
+                   }
+               }
+           }
+           .right_message{
+               margin-left:pxTorem(39px);
+               padding-right:pxTorem(10px);
+               height:auto;
+               .message_mingzi{
+                   height:pxTorem(39px);
+                   line-height:pxTorem(39px);
+                    font-size: pxTorem(14px);
+                    color: #8E8E93;
+                    .isShow_huifu{
+                        
+                        display:inline-block;
+                        span:nth-child(1){
+                            color:#000;
+                        }
+                    }
+                    .noShow_huifu{
+                        color:#000;
+                        display:none;
+                    }
+               }
+               .message_text{
+                    height:auto;
+                    font-size: pxTorem(15px);
+                    color: #000;
+               }
+               .fabiao_bottom{
+                   margin-top:pxTorem(16px);
+                   position: relative;
+                   display: block;
+                   width:100%;
+                   height:pxTorem(26.25px);
+                   line-height:pxTorem(26.25px);
+                   font-size: pxTorem(13px);
+                   color: #ACB3BF;
+                   margin-bottom: pxTorem(15px);
+                   span{
+                       display: inline-block;
+                       height:pxTorem(26.25px);
+                       line-height:pxTorem(26.25px);
+                   }
+                   .bottom_data{
+                       font-size: pxTorem(13px);
+                       color: #8E8E93;
+                       span {
+                           display: inline;
+                           padding-left: pxTorem(7px);
+                       }
+                   }
+                   .bottom_time{
+                       margin-left:pxTorem(7px);
+                       font-size: pxTorem(13px);
+                   }
+                   .h_delete{
+                       //position: absolute;
+                       //top:0;
+                       //left:pxTorem(122px);
+                       margin-left: pxTorem(13px);
+                       color:#007aff;
+                   }
+                   .h_dianzan{
+                       position: absolute;
+                       top: 0;
+                       left: pxTorem(200px);
+                       width:pxTorem(24px);
+                       height:pxTorem(26.25px);
+                       color: #8E8E93;
+                       font-size:pxTorem(14px);
+                   }
+
+                   .h_dianzan:after{
+                       content:"\e6bd";
+                       width:pxTorem(24px);
+                       right: 0;
+                       text-align: center;
+                   }
+                   .dianzan_num{
+                       position: absolute;
+                       top: 0;
+                       left: pxTorem(224px);
+                       font-size: pxTorem(14px);
+                       color: #8E8E93;
+                       width:pxTorem(39px);
+                   }
+                   .h_pinglun{
+                       position: absolute;
+                       top: 0;
+                       left: pxTorem(264px);
+                       width:pxTorem(24px);
+                       height:pxTorem(26.25px);
+                       font-size:pxTorem(14px);
+                       color: #8E8E93;
+                   }
+                   .h_pinglun:after{
+                       content:"\e6ae";
+                       width:pxTorem(24px);
+                       text-align: center;
+                   }
+                   .pinglun_num{
+                       position: absolute;
+                       top: 0;
+                       left: pxTorem(288px);
+                       color: #8E8E93;
+                       font-size:pxTorem(14px);
+                   }
+               }
+           }
+       }
+   }
+}
+.h_forum_empty{
+    width:100%;
+    height:100%;
+    background:#fff;
+    padding-top:pxTorem(116px);
+    .pic{
+        width:100%;
+        text-align: center;
+        height:pxTorem(70px);
+        text-align: center;
+        span{
+            position: relative;
+            display: inline-block;
+            width:pxTorem(70px);
+            height:pxTorem(70px);
+            line-height:pxTorem(70px);
+            color:#acb3bf;
+        }
+        span:after{
+            content:"\e6bf";
+            position: absolute;
+            top:0;
+            left:0;
+            width:pxTorem(70px);
+            height:pxTorem(70px);
+            line-height:pxTorem(70px);
+            text-align: center;
+            font-size:pxTorem(70px);
+        }
+    }
+    h3{
+        margin-top:pxTorem(40px);
+        width:100%;
+        height:pxTorem(22px);
+        line-height:pxTorem(22px);
+        text-align: center;
+        color:#4a4a4a;
+        font-size:pxTorem(16px);
+    }
+    p{
+      width: pxTorem(250px);
+      height: pxTorem(44px);
+      line-height: pxTorem(44px);
+      text-align: center;
+      margin: pxTorem(50px) auto 0;
+      font-size: pxTorem(17px);
+      color: #00AEFF;
+      border: 1px solid #00AEFF;
+      @include borderRadius(pxTorem(22px))
+    }
+}

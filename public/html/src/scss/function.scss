@@ -1,0 +1,114 @@
+$browser-default-font-size: 37.5px !default;
+/*html {
+    font-size: $browser-default-font-size;
+}*/
+@function pxTorem($px){//$px为需要转换的字号
+    @return $px / $browser-default-font-size * 1rem;
+
+}
+//SCSS
+html {
+    font-size: $browser-default-font-size;
+}
+@mixin sizing{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin absolute($direction){
+    position:$direction;
+}
+@mixin height($height){
+    height:$height;
+}
+@mixin hidden{
+    overflow:hidden;
+}
+@mixin center($center){
+    text-align:$center;
+}
+@mixin box{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+}
+@mixin flex{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+}
+@mixin box_flex{
+    display: -webkit-box;     
+    display: -moz-box;         
+    display: -ms-flexbox;      
+    display: -webkit-flex;
+    display: flex; 
+}
+@mixin pack{
+    -webkit-box-pack:center;
+    -moz-box-pack: center;
+    -ms-box-pack: center;
+    -o-box-pack: center;
+    box-pack: center;
+}
+@mixin hv($h){
+    -webkit-box-orient:$h;
+    -moz-box-pack: $h;
+    -ms-box-pack: $h;
+    -o-box-pack: $h;
+    box-pack: $h;
+}
+@mixin align{
+    -webkit-box-align:center;
+    -moz-box-align: center;
+    -ms-box-align: center;
+    -o-box-align: center;
+    box-align: center;
+}
+@mixin a{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    text-overflow: ellipsis;
+}
+@mixin inputColor($color){
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    　　color: $color;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder {
+    　　color:$color;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder {
+    　　color:$color;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    　　color:$color;
+    }
+}
+@mixin borderRadius($radiusValue){
+    -webkit-border-radius: $radiusValue;
+    -moz-border-radius: $radiusValue;
+    border-radius: $radiusValue;
+}
+@mixin touch{
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    box-overflow-scrolling: touch;
+}
+@mixin placeCenter {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}

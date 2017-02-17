@@ -1,0 +1,21 @@
+.loading-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background: #fff;
+  opacity: 0.8;
+  .loading-img {
+    position: absolute;
+    width: pxTorem(40px);
+    height: pxTorem(40px);
+    top: 40%;
+    left: 50%;
+    margin-top: pxTorem(-20px);
+    margin-left: pxTorem(-20px);
+    text-align: center;
+    background: #fff;
+  }
+}

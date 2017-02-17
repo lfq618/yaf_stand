@@ -1,0 +1,56 @@
+.comments-create {
+
+  .comments-create-txt {
+    line-height: pxTorem(20px);
+    resize: none;
+    width:100%;
+    height:pxTorem(210px);
+    padding:pxTorem(15px) pxTorem(10px);
+    font-size:pxTorem(15px);
+    margin-bottom: pxTorem(30px);
+    display: block;
+    background: #FFF;
+    border-bottom: 1px solid #dddee3;
+  }
+
+  .limit {
+    text-align: right;
+    font-size: pxTorem(14px);
+    color: #777E8C;
+    margin: pxTorem(10px) pxTorem(15px) pxTorem(15px) 0;
+  }
+
+  .btn-comments-submit {
+    display: block;
+    margin: pxTorem(10px);
+    font-size: pxTorem(17px);
+    line-height: 1;
+    padding: pxTorem(11px);
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: .16rem .53333rem;
+  font-size: .37333rem;
+  line-height: 1.42857;
+  border-radius: .10667rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #3395ff;
+  border-color: #3395ff;
+}

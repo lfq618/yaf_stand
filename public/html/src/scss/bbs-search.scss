@@ -1,0 +1,155 @@
+.search_page{
+  width: 100%;
+  height: 100%;
+  background: #f2f2f4;
+  header{
+    position: relative;
+    width:100%;
+    height: pxTorem(44px);
+    padding-top: pxTorem(8px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dddee3;
+    h1 {
+      width: pxTorem(12px);
+      height: pxTorem(12px);
+      position: absolute;
+      top: pxTorem(16px);
+      left: pxTorem(16px);
+      background: url("../images/search_icon.png") left center no-repeat;
+      -webkit-background-size: 100% 100%;
+      background-size: 100% 100%;
+    }
+    input {
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: pxTorem(314px);
+      height: pxTorem(28px);
+      margin-left: pxTorem(8px);
+      background: #fff;
+      border: none;
+      border-radius: pxTorem(5px);
+      padding-left: pxTorem(28px);
+      padding-right: pxTorem(30px);
+      font-size: pxTorem(14px);
+      color: #333;
+    }
+    input::-webkit-input-placeholder {
+      color: #8E8E93;
+    }
+    h2 {
+      width: pxTorem(30px);
+      height: pxTorem(28px);
+      position: absolute;
+      left: pxTorem(292px);
+      top: pxTorem(8px);
+      background: url("../images/clear_btn.png") center center no-repeat;
+      -webkit-background-size: pxTorem(14px) pxTorem(14px);
+      background-size: pxTorem(14px) pxTorem(14px);
+    }
+    h3 {
+      width: pxTorem(53px);
+      height: pxTorem(44px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height:pxTorem(44px);
+      font-size: pxTorem(17px);
+      color: #007AFF;
+      text-align: center;
+    }
+  }
+  .noResult {
+    width: 100%;
+    height: 100%;
+    padding-top: pxTorem(226px);
+    text-align: center;
+    background: #fff url("../images/empty.png") center pxTorem(116px) no-repeat;
+    -webkit-background-size: pxTorem(70px);
+    background-size: pxTorem(70px);
+    font-size: pxTorem(16px);
+    color: #4A4A4A;
+  }
+  ul {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #dddee3;
+    li {
+      display: block;
+      position: relative;
+      margin-left: pxTorem(10px);
+      padding-left: pxTorem(43px);
+      border-bottom: 1px solid #dddee3;
+      overflow: auto;
+      overflow-x: hidden;
+      img {
+        display: block;
+        position: absolute;
+        width: pxTorem(35px);
+        height: pxTorem(35px);
+        left:0;
+        top: pxTorem(15px);
+        @include sizing;
+        @include borderRadius(pxTorem(35px))
+      }
+      section{
+        padding-right: pxTorem(16px);
+        @include sizing();
+        h1 {
+          font-size: pxTorem(14px);
+          color: #8E8E93;
+          margin-top: pxTorem(18px);
+          line-height: 100%;
+          span {
+            color:#007aff
+          }
+        }
+        h2 {
+          font-size: pxTorem(16px);
+          color: #000;
+          letter-spacing: 0px;
+          line-height: pxTorem(22px);
+          margin-top: pxTorem(9px);
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          span {
+            color:#007aff
+          }
+        }
+        p {
+          margin-top: pxTorem(3px);
+          font-size: pxTorem(15px);
+          color: #333333;
+          line-height: pxTorem(22px);
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          span {
+            color:#007aff
+          }
+        }
+        > span {
+          display: block;
+          margin-top: pxTorem(7px);
+          margin-bottom: pxTorem(15px);
+          font-size: pxTorem(13px);
+          color: #8E8E93;
+        }
+        .comments-bar {
+          display: none;
+        }
+      }
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+}

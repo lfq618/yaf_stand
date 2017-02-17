@@ -1,0 +1,269 @@
+%position{position:absolute; top:0; left:0; width:100%;}
+.bbs-list{
+    @extend %position;
+    bottom:0;
+    right:0;
+    .forum_main{
+        .forum-banner-wrap {
+            .banner_wrap {
+                height: 100%;
+            }
+            .zb_banner {
+                width: 100%;
+                height: pxTorem(162px);
+            }
+            width: 100%;
+            height: pxTorem(162px);
+            position: relative;
+            .search_box {
+                position: absolute;
+                left: pxTorem(15px);
+                top: pxTorem(15px);
+                width: pxTorem(345px);
+                height: pxTorem(32px);
+                background: rgba(255,255,255,0.90);
+                border-radius: pxTorem(4px);
+                text-align: center;
+                z-index: 10;
+                transform: translate3D(0,0,0);
+                p {
+                    display: inline-block;
+                    font-size: pxTorem(14px);
+                    color: #5C5C5C;
+                    line-height: pxTorem(32px);
+                    background: url("../images/search_icon.png") left center no-repeat;
+                    -webkit-background-size: pxTorem(12px) pxTorem(12px);
+                    background-size: pxTorem(12px) pxTorem(12px);
+                    padding-left: pxTorem(17px);
+                }
+            }
+        }
+        .forum_main_items{
+            width: 100%;
+            display: block;
+            height:auto;
+            margin-top: pxTorem(10px);
+            border-top: 1px solid #dddee3;
+            background: #fff;
+            position: relative;
+            .h_avatar{
+                position: absolute;
+                z-index: 999;
+                display: block;
+                width:pxTorem(53px);
+                height:pxTorem(53px);
+                background:#fff;
+                top:pxTorem(32px)*(-1);
+                right:pxTorem(10px);
+                overflow: hidden;
+                text-align: center;
+                line-height:pxTorem(53px);
+                border-radius: 50%;
+                transform: translate3D(0,0,0);
+                img{
+                    display: inline-block;
+                    width:pxTorem(53px);
+                    height:pxTorem(53px);
+                    border-radius: 50%;
+                    border: pxTorem(2px) solid #007aff;
+                }
+            }
+            li{
+                position: relative;
+                background:#fff;
+                height:auto;
+                margin-left: pxTorem(10px);
+                border-bottom: 1px solid #ccc;
+                img{
+                    position: absolute;
+                    display: block;
+                    left:pxTorem(0px);
+                    top:pxTorem(15px);
+                    width:pxTorem(35px);
+                    height:pxTorem(35px);
+                    border-radius: 50%;
+                    overflow: hidden;
+               }
+               .top_right{
+                   margin-left:pxTorem(43px);
+                   padding-right:pxTorem(16px);
+                   height:auto;
+                   .person_mingzi{
+                       padding-top:pxTorem(17px);
+                       font-size: pxTorem(14px);
+                       line-height: 100%;
+                       color: #8e8e93;
+                   }
+                   .fabiao_title{
+                        margin-top: pxTorem(7px);
+                        font-size: pxTorem(16px);
+                        color: #000000;
+                        line-height: pxTorem(22px);
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                   }
+                   .fabiao_section {
+                       margin-top: pxTorem(4px);
+                       font-size: pxTorem(15px);
+                       color: #333333;
+                       line-height: pxTorem(21px);
+                       overflow: hidden;
+                       display: -webkit-box;
+                       -webkit-line-clamp:5;
+                       -webkit-box-orient: vertical;
+                       word-break: break-all;
+                   }
+                   .fabiao_pic{
+                       min-height:pxTorem(80px);
+                       margin-top:pxTorem(7px);
+                       height:auto;
+                       .h_pic1{
+                           width:pxTorem(80px);
+                           height:pxTorem(80px);
+                           display: inline-block;
+                           margin-right:pxTorem(6px);
+                           div{
+                               width:100%;
+                               height:100%;
+                           }
+                       }
+                       .h_only_one{
+                           width:pxTorem(225px);
+                           height:pxTorem(158px);
+                           display: inline-block;
+                           div{
+                               width:100%;
+                               height:100%;
+                           }
+                       }
+                       
+                   }
+                   .fabiao_bottom{
+                       position: relative;
+                       width:100%;
+                       height:pxTorem(14px);
+                       line-height:pxTorem(14px);
+                       margin-top:pxTorem(16px);
+                       margin-bottom: pxTorem(15px);
+                       .bottom_data{
+                           float:left;
+                           height:pxTorem(14px);
+                           font-size: pxTorem(13px);
+                           color: #8E8E93;
+                       }
+                       .h_pinglun{
+                           position: absolute;
+                           left: pxTorem(261px);
+                           top: 0;
+                           width:pxTorem(14px);
+                           font-size:pxTorem(14px);
+                           color: #8E8E93;
+                       }
+                       .h_pinglun:after{
+                           content:"\e6ae";
+                       }
+                       .pinglun_num{
+                           position: absolute;
+                           left: pxTorem(280px);
+                           top: 0;
+                           color: #8E8E93;
+                           font-size:pxTorem(14px);
+                       }
+                   }
+               }
+            }
+        }
+    
+    }
+    .h_forum_empty{
+        width:100%;
+        height:100%;
+        background:#fff;
+        padding-top:pxTorem(116px);
+        .pic{
+            width:100%;
+            text-align: center;
+            height:pxTorem(70px);
+            text-align: center;
+            span{
+                position: relative;
+                display: inline-block;
+                width:pxTorem(70px);
+                height:pxTorem(70px);
+                line-height:pxTorem(70px);
+                color:#acb3bf;
+            }
+            span:after{
+                content:"\e6bf";
+                position: absolute;
+                top:0;
+                left:0;
+                width:pxTorem(70px);
+                height:pxTorem(70px);
+                line-height:pxTorem(70px);
+                text-align: center;
+                font-size:pxTorem(70px);
+            }
+        }
+        h3{
+            margin-top:pxTorem(40px);
+            width:100%;
+            height:pxTorem(22px);
+            line-height:pxTorem(22px);
+            text-align: center;
+            color:#4a4a4a;
+            font-size:pxTorem(16px);
+        }
+        p{
+          width: pxTorem(250px);
+          height: pxTorem(44px);
+          line-height: pxTorem(44px);
+          text-align: center;
+          margin: pxTorem(50px) auto 0;
+          font-size: pxTorem(17px);
+          color: #00AEFF;
+          border: 1px solid #00AEFF;
+          @include borderRadius(pxTorem(22px))
+        }
+    }
+    
+    .goPinglun{
+        width:pxTorem(80px);
+        height:pxTorem(80px);
+        position:fixed;
+        z-index: 9999;
+        bottom:pxTorem(0px);
+        right:0;
+        font-size:pxTorem(22px);
+       
+    }
+    .goPinglun:after{
+        position: absolute;
+        right:pxTorem(15px);
+        top:pxTorem(15px);
+        width:pxTorem(50px);
+        height:pxTorem(50px);
+        text-align: center;
+        line-height:pxTorem(50px);
+        content:"\e6a9";
+        color:#fff;
+        border-radius: 50%;
+        background:#3395ff;
+        box-shadow:0 0 pxTorem(12px) #92c4e5;
+    }
+    .goPinglun:active{
+        opacity: 0.7;
+        filter:alpha(opacity=70);
+    }
+    .sxw_toTop{
+        display: block;
+        z-index: 10000;
+        bottom:pxTorem(87px);
+        right:pxTorem(16px);
+    }
+
+ 
+}

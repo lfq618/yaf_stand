@@ -5,7 +5,18 @@ class TestController extends Yaf_Controller_Abstract {
         $tm = date('YmdH');
         $secret = 'weibbs2017';
         $ua = '';
-        echo md5($secret . '' . $tm . $secret);
+        $token =  md5($secret . '' . $tm . $secret);
+        
+        $appId = 1;
+        
+        $postParams = [
+            'appId' => 1,
+            'token' => $token,
+        ];
+        
+        $data =
+        
+        
         exit;
     }
     

@@ -1,0 +1,259 @@
+.zb_releaseMain{
+    @include absolute(absolute);
+    padding-top: pxTorem(65px);
+    height:100%;
+    width:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:#f2f2f4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        div {
+            width: 100%;
+            height: pxTorem(54px);
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: pxTorem(5px) pxTorem(44px) 0 pxTorem(85px);
+            border-bottom: 1px solid #dddee3;
+            box-sizing: border-box;
+            p {
+                width: pxTorem(72px);
+                height: pxTorem(24px);
+                border: 1px solid #dddee3;
+                border-radius: pxTorem(2px);
+                font-size: pxTorem(14px);
+                color: #000000;
+                line-height: pxTorem(24px);
+                text-align: center;
+                display: block;
+                float: left;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                margin: pxTorem(10px) pxTorem(3px);
+            }
+            p.on {
+                border: 1px solid #3395FF;
+                color: #007aff;
+            }
+        }
+        h1 {
+            position: relative;
+            font-size: pxTorem(15px);
+            color: #95989F;
+            margin-left: pxTorem(15px);
+            margin-top: pxTorem(20px);
+            display: inline-block;li.on {
+            border: 1px solid #3395FF;
+            color: #007aff;
+        }
+            z-index: 10;
+        }
+        ul {
+            width: 100%;
+            height: 50vh;
+            background: #fff;
+            position: absolute;
+            overflow: auto;
+            overflow-x: hidden;
+            left: 0;
+            top: 0;
+            padding: pxTorem(5px) pxTorem(44px) pxTorem(5px) pxTorem(85px);
+            border-bottom: 1px solid #dddee3;
+            box-sizing: border-box;
+            z-index:10;
+            li {
+                width: pxTorem(72px);
+                height: pxTorem(24px);
+                border: 1px solid #dddee3;
+                border-radius: pxTorem(2px);
+                font-size: pxTorem(14px);
+                color: #000000;
+                line-height: pxTorem(24px);
+                text-align: center;
+                display: block;
+                float: left;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                margin: pxTorem(10px) pxTorem(3px);
+            }
+            li.on {
+                border: 1px solid #3395FF;
+                color: #007aff;
+            }
+        }
+        h2 {
+            width: pxTorem(40px);
+            height: pxTorem(24px);
+            background: url("../images/arrow.png") center center no-repeat;
+            -webkit-background-size: pxTorem(10px) pxTorem(6px);
+            background-size: pxTorem(10px) pxTorem(6px);
+            position: absolute;
+            right: 0;
+            top: pxTorem(15px);
+            z-index: 10;
+        }
+    }
+    header.closed {
+        height: pxTorem(54px);
+        overflow: hidden;
+        border-bottom: 1px solid #dddee3;
+        ul {
+            height: pxTorem(54px);
+            overflow: hidden;
+            z-index: 0
+        }
+        h2 {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+    }
+    .zb_releaseContainer{
+        height:auto;
+        width:100%;
+        background:#fff;   
+    }
+    .zb_releaseTitle{
+//        height:pxTorem(44px);
+        width:100%;
+        @include sizing;
+        padding-left:pxTorem(15px);
+        padding-top:pxTorem(15px);
+        input{
+            height:pxTorem(43px);
+            width:100%;
+            font-size: pxTorem(15px);
+            @include inputColor(#ACB3BF);
+            border-bottom:pxTorem(1px) solid #dddee3;
+            display:block;
+        }
+        .textContain{
+            width: 100%;
+            @include sizing;
+            padding-right: 0.4rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #dddee3;
+        }
+        textarea{
+            height: 0.4rem;
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.4rem;
+            padding: 0 pxTorem(17px) 0 0;
+            margin: 0;
+            line-height: 0.4rem;
+            @include sizing()
+        }
+    }
+    .zb_releaseContent{
+        height:auto;
+        width:100%;
+        @include sizing;
+        padding-left:pxTorem(15px);
+        border-bottom:pxTorem(1px) solid #dddee3;
+        textarea{
+            height:pxTorem(200px);
+            width:100%;
+            @include inputColor(#ACB3BF);
+            font-size: pxTorem(15px);
+            @include sizing;
+            padding-top:pxTorem(15px);
+            padding-right: pxTorem(17px);
+            line-height:pxTorem(24px);
+        }
+        .zb_uploadPicture{
+            height:auto;
+            width:100%;
+            overflow:auto;
+            overflow-x: hidden;
+            margin-top:pxTorem(10px);
+            dl{
+                height:pxTorem(80px);
+                width:pxTorem(80px);
+                @include absolute(relative);
+                @include sizing;
+                float: left;
+                margin-right:pxTorem(8px);
+                margin-bottom:pxTorem(17px);
+                dt{
+                    height:pxTorem(80px);
+                    width:pxTorem(80px);
+                    @include hidden;
+                    @include sizing;
+                    background-repeat: no-repeat;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    background-position: center;
+                    //img{
+                    //    display:block;
+                    //    height:100%;
+                    //    width:100%;
+                    //}
+                }
+                span {
+                    @include absolute(absolute);
+                    width: pxTorem(23px);
+                    height: pxTorem(23px);
+                    background:url('../images/icon_delete@2x.png');
+                    background-size: pxTorem(23px) pxTorem(23px);
+                    -webkit-background-size: pxTorem(23px) pxTorem(23px);
+                    @include sizing;
+                    top: pxTorem(5px);
+                    right: pxTorem(5px);
+                }
+            }
+            div{
+                height:pxTorem(80px);
+                width:pxTorem(80px);
+                float: left;
+                margin-bottom:pxTorem(17px);
+                img{
+                    display:block;
+                    height:100%;
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+.zb_releaseMain:after{
+   content:"";
+   width:100%;
+   height:pxTorem(54px);
+}
+.zb_goTorelease{
+        height:pxTorem(54px);
+        width:100%;
+        background: rgba(255,255,255,0.90);
+        box-shadow: 0px 0px 2px 0px rgba(118,118,118,0.50);
+        @include absolute(fixed);
+        left:0;
+        bottom:0;
+        @include sizing;
+        padding:pxTorem(8px) pxTorem(15px) pxTorem(7px);
+        div{
+            height:pxTorem(39px);
+            width:pxTorem(345px);
+            background: #3395ff;
+            border-radius: pxTorem(4px);
+            color:#fff;
+            line-height:pxTorem(39px);
+            text-align:center;
+            font-size: pxTorem(17px);
+        }
+        div:active {
+            opacity: 0.6;
+        }
+    }
