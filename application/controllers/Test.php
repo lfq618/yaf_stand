@@ -2,15 +2,11 @@
 class TestController extends Yaf_Controller_Abstract {
     
     public function md5Action() {
-        $tm = date('YmdH');
         $secret = 'weibbs2017';
-        $ua = '';
-        $token =  md5($secret . '' . $tm . $secret);
         
-        echo $token;
+        Fn::outputToJson(0, 'ok', Fn::generateToken($secret));
         
         
-        exit;
     }
     
     public function bbbAction() {

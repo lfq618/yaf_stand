@@ -319,4 +319,18 @@ class Fn {
     
         return count($StringLast);
     }
+    
+    /**
+     * 获取userAgent
+     * @return Ambigous <string, unknown>
+     */
+    public static function getHttpUserAgent() {
+        return isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+    }
+    
+    public static function generateToken($secret) {
+        $ua = self::getHttpUserAgent();
+        $tm = date('YmdH');
+        return md5($secret . $ua . $tm . $secret);
+    }
 }
