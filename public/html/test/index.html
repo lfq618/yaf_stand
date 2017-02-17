@@ -6,15 +6,21 @@
 <title>hello</title>
 </head>
 <body>
+token: <input type="text" id="token" value="" />
 <button class="btnAdd">点击我</button>
 <script type="text/javascript">
 jQuery(function($) {
 	$('.btnAdd').on('click',function() {
+		var token = $("#token").val();
+		var jsonData = {
+		        "appId": 1,
+		        "token": token
+		    };
 		$.ajax({
 	        type: "POST",
 	        url: "http://p100.ms-poi.systoon.com/forum/list",
 	        contentType: "application/json; charset=utf-8",
-	        data: JSON.stringify(GetJsonData()),
+	        data: JSON.stringify(jsonData),
 	        dataType: "json",
 	        success: function (res) {
 	            if (res.meta.code == 0) {
@@ -31,27 +37,7 @@ jQuery(function($) {
 	    });
 	});
 	
-	function GetJsonData() {
-		var token = '';
-		$.ajax({
-			type: 'get',
-			url: 'http://yafstd.lfq618.com/test/md5';
-			dataType: 'json',// 上传完成后, 返回json, text
-        	success: function(res) { // 上传之后回调
-            	if(res.meta.code == '0'){
-                	//如果上传成功
-                	token = res.meta.data;
-            	}else{
-            		alert('err');
-            	}
-        	},
-		})
-	    var json = {
-	        "appId": 1,
-	        "token": token
-	    };
-	    return json;
-	}
+	
 
 })
 </script>
