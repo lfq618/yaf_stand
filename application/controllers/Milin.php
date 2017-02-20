@@ -136,7 +136,7 @@ class MilinController extends Yaf_Controller_Abstract {
         $queryUrl = 'https://p100ms-poi.systoon.com/topic/add';
         $params = [
             'session' => $this->_session,
-            'forumId' => 1,
+            'forumId' => 27,
             'title'    => '江山如此剁椒，引无数英雄竟折腰',
             'content'  => [],
         ];
