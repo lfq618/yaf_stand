@@ -120,7 +120,7 @@ class MilinController extends Yaf_Controller_Abstract {
         $queryUrl = 'https://p100ms-poi.systoon.com/topic/list';
         $params = [
             'session' => $this->_session,
-            'forumId' => 1, 
+            'forumId' => 27, 
             'page'    => 1, 
             'pageLimit' => 10,
         ];
