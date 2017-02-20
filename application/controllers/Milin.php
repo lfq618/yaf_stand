@@ -22,6 +22,20 @@ class MilinController extends Yaf_Controller_Abstract {
     }
     
     public function infoAction() {
+        echo "<h3>通过code置换session</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/session/plugin';
+        $params = [
+            'code' => $this->_code,
+            'poi'  => json_encode($this->_poi),
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
         echo "<h3>通过session获取用户信息</h3><br />";
         $queryUrl = 'https://p100ms-poi.systoon.com/user/session';
         $params = [
