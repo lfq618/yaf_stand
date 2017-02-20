@@ -161,6 +161,56 @@ class MilinController extends Yaf_Controller_Abstract {
         echo $queryUrl . "<br />";
         echo json_encode($params);
         echo "<hr />";
+        
+        echo "<h3>添加评论接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/comment/add';
+        $params = [
+            'session' => $this->_session,
+            'subjectId' => 22, 
+            'content'   => '非常好，非常好', 
+            'toUserId'  => 10, 
+            'toId'      => 0,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>评论列表接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/comment/list';
+        $params = [
+            'session' => $this->_session,
+            'subjectId' => 22,
+            'page'      => 1,
+            'pageLimit'      => 10,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>话题点赞接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/comment/like';
+        $params = [
+            'session' => $this->_session,
+            'subjectId' => 22,
+            'type'      => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
     }
     
     public function sessionPluginAction() {
