@@ -104,12 +104,12 @@ class Curl
 					unset($query[$key]);
 				}
 				if ($isUrlcode) {
-				 // 评论点赞平台严格要求值类型，数字encode后会变为字符串，此处改为数字不用encode.
-				 if (!is_int($val)) {
-    					$query[$encode_key] = urlencode($val);
-				 } else {
-				     $query[$encode_key] = $val;
-				 }
+    				 // 评论点赞平台严格要求值类型，数字encode后会变为字符串，此处改为数字不用encode.
+    				 if (!is_int($val)) {
+        					$query[$encode_key] = urlencode($val);
+    				 } else {
+    				     $query[$encode_key] = $val;
+    				 }
 				} else {
 					$query[$encode_key] = $val;
 				}
@@ -128,6 +128,8 @@ class Curl
 		    $headers[] = 'Content-type: application/json; charset=utf-8';
 		    $headers[] = 'Content-Length: ' . strlen($query);
 		}
+		
+		Fn::writeLog($query);
 		
 		curl_setopt(self::$_ch, CURLOPT_URL, $url);
 		curl_setopt(self::$_ch, CURLOPT_RETURNTRANSFER, 1);
