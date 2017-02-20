@@ -3,7 +3,8 @@ class MilinController extends Yaf_Controller_Abstract {
     
     private $_code = 'm+yzD1RD0AuCbCJvI5YycbmY5hNKizHbZxoQUe58qN7pPhwn4VJ9V83Iccaft+PVA8vSARtbbTvJ37kBDo8MKT1lttyVzfj9iaL05JcLhWL7VvjE9AmgfnXz8OM2unvpqx3lJCjiH8mBO04mysLQYxec9VLJOHp7OfDwjL5ybSYmhHXt9bsgUQ==';
     private $_poi  = '';
-    private $_session = '';
+    private $_session = '4c3b8a5b71af3d894965ec8ba1a93489';
+    private $_userId  = 10;
     
     public function init() {
         $poi = [
@@ -18,6 +19,88 @@ class MilinController extends Yaf_Controller_Abstract {
         ];
         
         $this->_poi = $poi;
+    }
+    
+    public function infoAction() {
+        echo "<h3>通过session获取用户信息</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/user/session';
+        $params = [
+            'session' => $this->_session,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>通过userId获取用户信息</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/user/detail';
+        $params = [
+            'userId' => $this->_userId
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>社区首页获取banner图，应用，活动等基础信息接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/v1/village/info';
+        $params = [
+            'session' => $this->_session,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>社区首页获取推广图列表接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/v1/village/promo';
+        $params = [
+            'session' => $this->_session,
+            'page'    => 1, 
+            'pageLimit' => 2,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>原生邻聚页面获取banner图及应用列表接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/v1/app/info';
+        $params = [
+            'session' => $this->_session,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>活动列表接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/activity/list';
+        $params = [
+            'session' => $this->_session,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
     }
     
     public function sessionPluginAction() {
@@ -49,9 +132,9 @@ class MilinController extends Yaf_Controller_Abstract {
     
     
     
-    private function generateToken($params, $secret = '11d8ae05f3c549afb5cc457f322eed9b') {
+    private function buildParams($params, $secret = '11d8ae05f3c549afb5cc457f322eed9b') {
         if (! is_array($params)) {
-            return '';
+            return [];
         }
         
         ksort($params);
@@ -65,7 +148,10 @@ class MilinController extends Yaf_Controller_Abstract {
             $paramsStr .= $param;
         }
         
-        return md5($paramsStr . $secret);
+        $token = md5($paramsStr . $secret);
+        $params['token'] = $token;
+        
+        return $params;
     }
     
 }
