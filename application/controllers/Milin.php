@@ -138,7 +138,7 @@ class MilinController extends Yaf_Controller_Abstract {
             'session' => $this->_session,
             'forumId' => 27,
             'title'    => '江山如此剁椒，引无数英雄竟折腰',
-            'content'  => [],
+            'content'  => '假如生活欺骗了你，那你也欺骗生活吧，互相欺骗吧',
         ];
         
         $params = $this->buildParams($params);
