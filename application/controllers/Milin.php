@@ -211,6 +211,39 @@ class MilinController extends Yaf_Controller_Abstract {
         echo "<hr />";
         
         
+        echo "<h3>话题详情</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/topic/detail';
+        $params = [
+            'session' => $this->_session,
+            'id'      => 22,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
+        echo "<h3>申请运营者接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/operate/apply';
+        $params = [
+            'session' => $this->_session,
+            'name'    => '印度阿三',
+            'contact' => 18600863930,
+            'applyContent' => '我要申请运营者',
+            'personInfo' => '社区无敌小英雄'
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
     }
     
     public function sessionPluginAction() {
