@@ -34,6 +34,12 @@ class MilinController extends Yaf_Controller_Abstract {
         
         $data = Curl::callWebServer($queryUrl, $params, 'post', 5, true);
         
+        echo $queryUrl;
+        echo "<hr />";
+        echo json_encode($params);
+        
+        echo "<hr />";
+        
         echo $data;
         exit;
         
