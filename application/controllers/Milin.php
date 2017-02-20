@@ -115,6 +115,52 @@ class MilinController extends Yaf_Controller_Abstract {
         echo $queryUrl . "<br />";
         echo json_encode($params);
         echo "<hr />";
+        
+        echo "<h3>获取话题列表接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/topic/list';
+        $params = [
+            'session' => $this->_session,
+            'forumId' => 1, 
+            'page'    => 1, 
+            'pageLimit' => 10,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>添加话题接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/topic/add';
+        $params = [
+            'session' => $this->_session,
+            'forumId' => 1,
+            'title'    => '江山如此剁椒，引无数英雄竟折腰',
+            'content'  => [],
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>删除话题接口</h3><br />";
+        $queryUrl = 'https://p100ms-poi.systoon.com/topic/delete';
+        $params = [
+            'session' => $this->_session,
+            'id' => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
     }
     
     public function sessionPluginAction() {
