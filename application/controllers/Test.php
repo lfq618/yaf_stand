@@ -4,10 +4,20 @@ class TestController extends Yaf_Controller_Abstract {
     public function md5Action() {
         
         $str = 'bbsjava1024';
-        echo bin2hex(md5($str));
+        echo $this->strToHex(md5($str));
         exit;
         
     }
+    
+    public function strToHex($string)//字符串转十六进制
+    { 
+    $hex="";
+    for($i=0;$i<strlen($string);$i++)
+    $hex.=dechex(ord($string[$i]));
+    $hex=strtoupper($hex);
+    return $hex;
+    }   
+ 
     
     
     public function bbbAction() {
