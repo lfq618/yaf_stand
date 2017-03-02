@@ -4,8 +4,8 @@ class TestController extends Yaf_Controller_Abstract {
     public function md5Action() {
         
         $str = 'bbsjava1024';
-        echo $this->strToHex(md5($str));
-        exit;
+        $str = $this->strToHex(md5($str));
+        Fn::outputToJson(0, 'ok', $str);
         
     }
     
