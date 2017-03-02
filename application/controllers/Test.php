@@ -2,12 +2,13 @@
 class TestController extends Yaf_Controller_Abstract {
     
     public function md5Action() {
-        $secret = 'weibbs2017';
         
-        Fn::outputToJson(0, 'ok', Fn::generateToken($secret));
-        
+        $str = 'bbsjava1024';
+        echo bin2hex(md5($str));
+        exit;
         
     }
+    
     
     public function bbbAction() {
         $poiInfo = [
