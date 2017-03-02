@@ -3,8 +3,7 @@ class TestController extends Yaf_Controller_Abstract {
     
     public function md5Action() {
         
-        $str = 'bbsjava1024';
-        print(bin2hex(md5($str)));
+        echo md5(rand(1, 1000) . time() . rand(1, 10000));
         exit;
         
     }
