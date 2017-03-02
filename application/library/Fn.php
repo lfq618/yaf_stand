@@ -29,7 +29,7 @@ class Fn {
      */
     public static function writeLog( $str , $fileName = '' ) {
         if (! $fileName) {
-            $fileName =  '/logs/error.log';
+            $fileName =  '/da0/logs/error.log';
         } 
         
 //         $fileName = APP_PATH . $fileName;
