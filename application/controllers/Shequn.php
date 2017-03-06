@@ -1,6 +1,8 @@
 <?php
 class ShequnController extends Yaf_Controller_Abstract {
     
+    private $_code = 'QUdwHE57T8+TEvr1K404PpNZgyqR/0LQIeE3SE43hS8swOmS9QvFj0V/uAJXzS3AnQlfYGOspAuI/ocZJ/ER1UH1qjpumEZ90LMAB+zILiRPhTrFE700qqzHAesT9ClHyZ/vxDVwVJyEAi5tlfHuQ3AwbJp7h/ezOiq4GT3mgr0xfI6FM0N9wA==';
+    
     public $appConfig = array(
         '100' => array(
             'title'     => '原生应用',
@@ -35,7 +37,7 @@ class ShequnController extends Yaf_Controller_Abstract {
     );
     
     public function indexAction() {
-        echo "<h3>通过</h3><br />";
+        echo "<h3>通过uid获取用户信息</h3><br />";
         $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
         $params = [
             'appId'         => 103,
@@ -43,6 +45,47 @@ class ShequnController extends Yaf_Controller_Abstract {
             'requestApi'    => 'index-user-detail',
             'loginUserId'   => 12, 
             'userId'        => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>登录验证用户接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-plugin-login',
+            'code'          => $this->_code,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>完善用户学校信息接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-plugin-login',
+            'code'          => $this->_code,
+            'school'        => json_encode([
+                'type'  => '120300',
+                'uid'   => 12, 
+                'name'  => '中国人民大学', 
+                'address' => '北京中关村', 
+                'lat' => 39.123456, 
+                'long' => 116.654321, 
+                'feature' => '高等学府',
+            ])
         ];
         
         $params = $this->buildParams($params);
