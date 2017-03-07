@@ -136,7 +136,7 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo "<h3>晒消息</h3><br />";
         $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
         $params = [
-            'appId'         => 100,
+            'appId'         => 103,
             'time'          => time(),
             'requestApi'    => 'v1-shai-notice',
             'userId'        => 1,
@@ -152,7 +152,7 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo "<h3>晒 点赞接口</h3><br />";
         $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
         $params = [
-            'appId'         => 100,
+            'appId'         => 103,
             'time'          => time(),
             'requestApi'    => 'v1-shai-notice',
             'code'          => $this->_code,
