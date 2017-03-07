@@ -54,6 +54,23 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo json_encode($params);
         echo "<hr />";
         
+        echo "<h3>原生端获取用户详情</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 103,
+            'time'          => time(),
+            'requestApi'    => 'index-user-info',
+            'loginUserId'   => 12,
+            'userId'        => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
         echo "<h3>登录验证用户接口</h3><br />";
         $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
         $params = [
