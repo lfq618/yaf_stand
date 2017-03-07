@@ -123,7 +123,7 @@ class ShequnController extends Yaf_Controller_Abstract {
             'resName'       => 'activity',
             'resId'         => '',
             'page'          => 1, 
-            'pageLimit'     => 10,
+            'pageLimit'     => 1,
         ];
         
         $params = $this->buildParams($params);
