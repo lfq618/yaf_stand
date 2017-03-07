@@ -139,7 +139,7 @@ class ShequnController extends Yaf_Controller_Abstract {
             'appId'         => 100,
             'time'          => time(),
             'requestApi'    => 'v1-shai-notice',
-            'userId'        => $this->_code,
+            'code'          => $this->_code,
         ];
         
         $params = $this->buildParams($params);
