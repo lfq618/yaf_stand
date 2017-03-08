@@ -221,7 +221,59 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo json_encode($params);
         echo "<hr />";
         
+        echo "<h3>获取组局分类接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-zuju-categorylist',
+            'code'          => $this->_code,
+        ];
         
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取组局列表接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-zuju-list',
+            'code'          => $this->_code,
+            'cid'           => 0, 
+            'tm'            => time(),
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>按照地理位置获取组局列表接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-zuju-nearby',
+            'code'          => $this->_code,
+            'cid'           => 0,
+            'tm'            => time(), 
+            'lat'           => 39.123456, 
+            'long'          => 116.654321
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
     }
     
     
