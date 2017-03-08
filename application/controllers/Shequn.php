@@ -3,6 +3,8 @@ class ShequnController extends Yaf_Controller_Abstract {
     
     private $_code = 'QUdwHE57T8+TEvr1K404PpNZgyqR/0LQIeE3SE43hS8swOmS9QvFj0V/uAJXzS3AnQlfYGOspAuI/ocZJ/ER1UH1qjpumEZ90LMAB+zILiRPhTrFE700qqzHAesT9ClHyZ/vxDVwVJyEAi5tlfHuQ3AwbJp7h/ezOiq4GT3mgr0xfI6FM0N9wA==';
     
+    private $_ticket = '42577e2ae93ed3ef30e447082084aae2';
+    
     public $appConfig = array(
         '100' => array(
             'title'     => '原生应用',
@@ -164,6 +166,62 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo $queryUrl . "<br />";
         echo json_encode($params);
         echo "<hr />";
+        
+        echo "<h3>获取访客列表</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/h5';
+        $params = [
+            'ticket'        => $this->_ticket,
+            'time'          => time(),
+            'requestApi'    => 'index-visitor-list',
+            'userId'        => 2,
+            'page'          => 1, 
+            'pageLimit'     => 10,
+        ];
+        
+//         $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取关注用户列表</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/h5';
+        $params = [
+            'ticket'        => $this->_ticket,
+            'time'          => time(),
+            'requestApi'    => 'index-follow-listfollow',
+            'userId'        => 2,
+            'page'          => 1,
+            'pageLimit'     => 10,
+        ];
+        
+        //         $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取粉丝列表</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/h5';
+        $params = [
+            'ticket'        => $this->_ticket,
+            'time'          => time(),
+            'requestApi'    => 'index-follow-listfans',
+            'userId'        => 2,
+            'page'          => 1,
+            'pageLimit'     => 10,
+        ];
+        
+        //         $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
     }
     
     
