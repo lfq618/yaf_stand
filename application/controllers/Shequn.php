@@ -274,6 +274,93 @@ class ShequnController extends Yaf_Controller_Abstract {
         echo $queryUrl . "<br />";
         echo json_encode($params);
         echo "<hr />";
+        
+        echo "<h3>获取活动类型列表</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-activity-tablist',
+            'code'          => $this->_code,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取活动列表接口-按照类别</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-activity-list',
+            'code'          => $this->_code,
+            'id'            => 1, 
+            'res_type'       => 4, 
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取活动列表接口-按照精选</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-activity-list',
+            'code'          => $this->_code,
+            'id'            => 8,
+            'res_type'       => 2,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取活动列表接口-按照学校</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-activity-list',
+            'code'          => $this->_code,
+            'id'            => 0,
+            'res_type'       => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取推荐活动接口</h3><br />";
+        $queryUrl = 'http://t100devshequn.systoon.com/api/route/index';
+        $params = [
+            'appId'         => 100,
+            'time'          => time(),
+            'requestApi'    => 'v1-activity-recommendlist',
+            'code'          => $this->_code,
+            'page'          => 1,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
     }
     
     
