@@ -67,13 +67,11 @@ class BbsController extends Yaf_Controller_Abstract {
         echo json_encode($params);
         echo "<hr />";
         
-        echo "<h3>删除话题接口</h3><br />";
+        echo "<h3>获取论坛列表</h3><br />";
         $queryUrl = 'http://p100.ms-bbs.systoon.com/forum/list';
         $params = [
             'appId'     => $this->_appId,
             'token'     => $this->getToken(),
-            'id'        => 13, 
-            'userId'    => $this->_userId,
         ];
         
         $params = $this->buildParams($params);
