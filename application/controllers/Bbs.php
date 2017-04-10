@@ -181,4 +181,8 @@ class BbsController extends Yaf_Controller_Abstract {
     public function getToken() {
         return Fn::generateToken($this->_secret);
     }
+    
+    private function buildParams($params) {
+        return $params;
+    }
 }
