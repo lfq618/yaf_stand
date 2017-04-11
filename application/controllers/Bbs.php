@@ -174,6 +174,73 @@ class BbsController extends Yaf_Controller_Abstract {
         echo $queryUrl . "<br />";
         echo json_encode($params);
         echo "<hr />";
+        
+        echo "<h3>添加评论接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/comment/add';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'loginUserId'    => $this->_userId,
+            'toUserId'       => 397833, 
+            'topicId'        => 93, 
+            'content'        => '大风起兮云飞扬',
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取评论列表接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/comment/list';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'topicId'        => 93,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>点赞接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/like/add';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'topicId'        => 93,
+            'userId'    => $this->_userId, 
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>删除点赞接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/like/del';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'topicId'        => 93,
+            'userId'    => $this->_userId,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
     }
     
     public function getToken() {
