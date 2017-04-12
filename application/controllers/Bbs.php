@@ -240,6 +240,23 @@ class BbsController extends Yaf_Controller_Abstract {
         echo json_encode($params);
         echo "<hr />";
         
+        echo "<h3>删除评论接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/comment/del';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'topicId'        => 93,
+            'userId'    => $this->_userId,
+            'cId'       => 12,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
         
     }
     
