@@ -23,9 +23,9 @@ class MilinController extends Yaf_Controller_Abstract {
     
     public function infoAction() {
         echo "<h3>场景化社区通改造接口</h3><br />";
-        $queryUrl = 'https://p100.portal.toon.mobi/v1/app/check';
+        $queryUrl = 'https://p100.portal.toon.mobi/api/app/list';
         $params = [
-            'poiId' => 227,
+            'poiId' => 3676,
             'poiType' => 120300, 
             'toonType' => 102,
             'time'    => Fn::getMillisecond()
