@@ -180,10 +180,10 @@ class BbsController extends Yaf_Controller_Abstract {
         $params = [
             'appId'     => $this->_appId,
             'token'     => $this->getToken(),
-            'loginUserId'    => $this->_userId,
             'toUserId'       => 397833, 
             'topicId'        => 93, 
             'content'        => '大风起兮云飞扬',
+            'userInfo'  => $this->_userInfo
         ];
         
         $params = $this->buildParams($params);
@@ -214,7 +214,7 @@ class BbsController extends Yaf_Controller_Abstract {
             'appId'     => $this->_appId,
             'token'     => $this->getToken(),
             'topicId'        => 93,
-            'userId'    => $this->_userId, 
+            'userInfo'  => $this->_userInfo
         ];
         
         $params = $this->buildParams($params);
@@ -248,6 +248,24 @@ class BbsController extends Yaf_Controller_Abstract {
             'topicId'        => 93,
             'userId'    => $this->_userId,
             'cId'       => 12,
+        ];
+        
+        $params = $this->buildParams($params);
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        echo "<h3>获取点赞列表接口</h3><br />";
+        $queryUrl = 'http://p100.ms-bbs.systoon.com/v1/like/list';
+        $params = [
+            'appId'     => $this->_appId,
+            'token'     => $this->getToken(),
+            'topicId'   => 93,
+            'cId'       => 0,
+            'page'      => 1, 
+            'pageLimit' => 10
         ];
         
         $params = $this->buildParams($params);
