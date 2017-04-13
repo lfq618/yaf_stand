@@ -22,6 +22,23 @@ class MilinController extends Yaf_Controller_Abstract {
     }
     
     public function infoAction() {
+        echo "<h3>场景化社区通改造接口</h3><br />";
+        $queryUrl = 'https://p100.portal.toon.mobi/v1/app/check';
+        $params = [
+            'poiId' => 227,
+            'poiType' => 120300, 
+            'toonType' => 102,
+            'time'    => Fn::getMillisecond()
+        ];
+        
+        $params = $this->buildParams2($params, '11d8ae05f3c549afb5cc457f322eed9b');
+        
+        
+        echo $queryUrl . "<br />";
+        echo json_encode($params);
+        echo "<hr />";
+        
+        
         echo "<h3>通过code置换session</h3><br />";
         $queryUrl = 'https://p100ms-poi.systoon.com/session/plugin';
         $params = [
@@ -294,6 +311,28 @@ class MilinController extends Yaf_Controller_Abstract {
         $token = md5($paramsStr . $secret);
         $params['token'] = $token;
         
+        return $params;
+    }
+    
+    private function buildParams2($params, $secret = '11d8ae05f3c549afb5cc457f322eed9b') {
+        if (! is_array($params)) {
+            return [];
+        }
+    
+        ksort($params);
+    
+        $paramsStr = '';
+        foreach ($params as $param) {
+            if (is_array($param)) {
+                continue;
+            }
+    
+            $paramsStr .= $param;
+        }
+    
+        $token = strtoupper(md5($secret . $paramsStr . $secret));
+        $params['sign'] = $token;
+    
         return $params;
     }
     
