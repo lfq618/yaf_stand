@@ -322,12 +322,8 @@ class MilinController extends Yaf_Controller_Abstract {
         ksort($params);
     
         $paramsStr = '';
-        foreach ($params as $param) {
-            if (is_array($param)) {
-                continue;
-            }
-    
-            $paramsStr .= $param;
+        foreach ($params as $key=>$val) {
+            $paramsStr .= $key.$val;
         }
     
         $token = strtoupper(md5($secret . $paramsStr . $secret));
